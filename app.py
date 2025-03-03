@@ -41,10 +41,14 @@ def init_db():
         conn.close()
 
 
-def signup_user(username, email, password, first_name, last_name):
+def signup_user(username, email, password, confirm_password, first_name, last_name):
+    if password != confirm_password:
+        return 'Passwords do not match!'  # Return error message if passwords do not match
+
     conn = get_db_connection()
     cursor = conn.cursor()
 
+    # Check if username or email already exists
     cursor.execute('SELECT * FROM users WHERE username = ? OR email = ?', (username, email))
     existing_user = cursor.fetchone()
 
@@ -66,7 +70,6 @@ def signup_user(username, email, password, first_name, last_name):
 
     return 'Signup successful! Please log in.'
 
-
 @app.route('/')
 def index():
     return render_template('signup.html')
@@ -77,15 +80,16 @@ def signup():
     username = request.form['username']
     email = request.form['email']
     password = request.form['password']
+    confirm_password = request.form['confirm_password']  # Capture confirm password
     first_name = request.form['first_name']
     last_name = request.form['last_name']
 
-    message = signup_user(username, email, password, first_name, last_name)
+    message = signup_user(username, email, password, confirm_password, first_name, last_name)
     flash(message)
 
     if 'Signup successful!' in message:
         return redirect(url_for('homepage'))
-
+    
     return redirect(url_for('index'))
 
 
