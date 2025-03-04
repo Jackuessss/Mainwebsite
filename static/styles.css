@@ -12,7 +12,7 @@ html, body {
 
 /* Full-screen Background Image */
 body {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzDVoj-opCnzUZtfQLXRWC4NrBr-eMRoZZ9g&s'); /* Replace with your image URL */
+    background-image: url('/static/images/webbg.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -20,7 +20,7 @@ body {
     align-items: center;
     backdrop-filter: blur(0px); /* Apply frosted glass effect */
     font-size: 16px;
-    color: #161d2e; /* Dark blue color for text */
+    color: #3b474b; /* Dark blue color for text */
 }
 
 /* Centered Container */
@@ -34,8 +34,8 @@ body {
 
 /* Form Box Styling */
 .form-box {
-    background: rgba(255, 255, 255, 0.2); /* Frosted glass background */
-    backdrop-filter: blur(100px); /* Adding blur to create the frosted effect */
+    background: hsl(0 0% 100% / .5); /* Frosted glass background */
+    backdrop-filter: blur(5px); /* Adding blur to create the frosted effect */
     border-radius: 15px;
     padding: 40px;
     width: 100%;
@@ -46,8 +46,9 @@ body {
 
 h2 {
     margin-bottom: 20px;
-    font-size: 24px;
-    color: #161d2e; /* Dark blue color for headings */
+    font-size: 30px;
+    color: #3b474b; /* Dark blue color for headings */
+    font-weight:bold ;
 }
 
 /* Form Input Fields */
@@ -56,15 +57,15 @@ input[type="text"], input[type="email"], input[type="password"] {
     padding: 12px;
     margin: 10px 0;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(#3b474b);
     background-color: rgba(255, 255, 255, 0.1);
-    color: #161d2e; /* Dark blue color for input text */
+    color: #3b474b; /* Dark blue color for input text */
     font-size: 16px;
 }
 
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
     outline: none;
-    border: 1px solid #161d2e; /* Dark blue border on focus */
+    border: 1px solid #3b474b; /* Dark blue border on focus */
 }
 
 /* Additional Options (Remember Me, Forgot Password) */
@@ -78,21 +79,20 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .forgot-password {
     background: none;
     border: none;
-    color: #161d2e; /* Dark blue color for forgot password text */
-    font-size: 14px;
+    color: #3b474b; /* Dark blue color for forgot password text */
+    font-size: 15px;
     cursor: pointer;
-    text-decoration: underline;
 }
 
 .forgot-password:hover {
-    color: #f1f1f1; /* Lighter color on hover */
+    color: #62777d; /* Lighter color on hover */
 }
 
 /* Submit Button */
 button {
     width: 100%;
     padding: 12px;
-    background-color: #161d2e;
+    background-color: #3b474b;
     border: none;
     border-radius: 10px;
     color: white;
@@ -100,12 +100,24 @@ button {
     cursor: pointer;
 }
 
+#forgot:hover{
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    color: #62777d;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
 button:hover {
-    background-color: #222e4a;
+    background-color: #62777d;
 }
 
 input[type="checkbox"]{
-    accent-color: #161d2e;
+    accent-color: #3b474b;
 }
 /* Link Styling */
 p {
@@ -113,10 +125,13 @@ p {
 }
 
 a {
-    color: #161d2e; /* Dark blue color for links */
-    text-decoration: underline;
+    color: #3b474b; /* Dark blue color for links */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 a:hover {
-    color: #f1f1f1; /* Lighter color on hover */
+    color: #62777d; /* Lighter color on hover */
+    text-decoration: none;
 }
