@@ -1,0 +1,122 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Full-screen Background Image */
+body {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzDVoj-opCnzUZtfQLXRWC4NrBr-eMRoZZ9g&s'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(0px); /* Apply frosted glass effect */
+    font-size: 16px;
+    color: #161d2e; /* Dark blue color for text */
+}
+
+/* Centered Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Form Box Styling */
+.form-box {
+    background: rgba(255, 255, 255, 0.2); /* Frosted glass background */
+    backdrop-filter: blur(100px); /* Adding blur to create the frosted effect */
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px; /* Maximum width of the form */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #161d2e; /* Dark blue color for headings */
+}
+
+/* Form Input Fields */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #161d2e; /* Dark blue color for input text */
+    font-size: 16px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    outline: none;
+    border: 1px solid #161d2e; /* Dark blue border on focus */
+}
+
+/* Additional Options (Remember Me, Forgot Password) */
+.extra-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.forgot-password {
+    background: none;
+    border: none;
+    color: #161d2e; /* Dark blue color for forgot password text */
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.forgot-password:hover {
+    color: #f1f1f1; /* Lighter color on hover */
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #161d2e;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #222e4a;
+}
+
+input[type="checkbox"]{
+    accent-color: #161d2e;
+}
+/* Link Styling */
+p {
+    margin-top: 10px;
+}
+
+a {
+    color: #161d2e; /* Dark blue color for links */
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #f1f1f1; /* Lighter color on hover */
+}

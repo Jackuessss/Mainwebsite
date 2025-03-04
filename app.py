@@ -74,12 +74,10 @@ def login_user(username_or_email, password):
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    # Check if user exists by username or email
     cursor.execute('SELECT id, username, email, password_hash FROM users WHERE username = ? OR email = ?', (username_or_email, username_or_email))
     user = cursor.fetchone()
 
     if user:
-        # Validate password
         user_id = user['id']
         stored_hash = user['password_hash']
         salted_password = password + user_id
