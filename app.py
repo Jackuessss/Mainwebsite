@@ -17,7 +17,6 @@ def get_db_connection():
 
 
 def init_db():
-    # Ensure the database exists and table is created
     if not os.path.exists(DATABASE):
         print(f"Database {DATABASE} does not exist. Creating it...")
 
@@ -25,7 +24,6 @@ def init_db():
         conn = get_db_connection()
         cursor = conn.cursor()
 
-        # Create the 'users' table if it doesn't exist
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS users (
                 id TEXT PRIMARY KEY,
@@ -37,18 +35,18 @@ def init_db():
             )
         ''')
         conn.commit()
-        print("Database initialized with 'users' table.")  # Debugging print
+        print("Database initialized with 'users' table.")  
         conn.close()
 
 
 def signup_user(username, email, password, confirm_password, first_name, last_name):
     if password != confirm_password:
-        return 'Passwords do not match!'  # Return error message if passwords do not match
+        return 'Passwords do not match!'
 
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    # Check if username or email already exists
+
     cursor.execute('SELECT * FROM users WHERE username = ? OR email = ?', (username, email))
     existing_user = cursor.fetchone()
 
@@ -80,7 +78,7 @@ def signup():
     username = request.form['username']
     email = request.form['email']
     password = request.form['password']
-    confirm_password = request.form['confirm_password']  # Capture confirm password
+    confirm_password = request.form['confirm_password']  
     first_name = request.form['first_name']
     last_name = request.form['last_name']
 
@@ -99,5 +97,5 @@ def homepage():
 
 
 if __name__ == '__main__':
-    init_db()  # Initialize the database and create the table if it doesn't exist
+    init_db()  
     app.run(debug=True)
