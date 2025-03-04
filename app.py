@@ -96,10 +96,10 @@ def login_user(username_or_email, password):
 
 @app.route('/')
 def index():
-    return render_template('login.html')
+    return render_template('signup.html')
 
 
-@app.route('/signup', methods=['POST'])
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
     username = request.form['username']
     email = request.form['email']
