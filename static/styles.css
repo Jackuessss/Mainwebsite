@@ -18,9 +18,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(0px); /* Apply frosted glass effect */
+    backdrop-filter: blur(0px);
     font-size: 16px;
-    color: #3b474b; /* Dark blue color for text */
+    color: #3b474b;
 }
 
 /* Centered Container */
@@ -34,12 +34,12 @@ body {
 
 /* Form Box Styling */
 .form-box {
-    background: hsl(0 0% 100% / .5); /* Frosted glass background */
-    backdrop-filter: blur(5px); /* Adding blur to create the frosted effect */
+    background: hsl(0 0% 100% / 0.5);
+    backdrop-filter: blur(5px);
     border-radius: 15px;
     padding: 40px;
     width: 100%;
-    max-width: 400px; /* Maximum width of the form */
+    max-width: 400px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -47,11 +47,11 @@ body {
 h2 {
     margin-bottom: 20px;
     font-size: 30px;
-    color: #3b474b; /* Dark blue color for headings */
+    color: #3b474b;
     font-weight: bold;
 }
 
-/* Form Input Fields */
+/* Form Group */
 .form__group {
     position: relative;
     padding: 15px 0 0;
@@ -59,55 +59,59 @@ h2 {
     width: 100%;
 }
 
+/* Form Field */
 .form__field {
     font-family: inherit;
     width: 100%;
     border: 0;
-    border-bottom: 2px solid #9b9b9b;
+    border-bottom: 2px solid #3b474b;
     outline: 0;
     font-size: 1.3rem;
-    color: #fff;
+    color: #62777d;
     padding: 7px 0;
     background: transparent;
-    transition: border-color 0.2s;
-
-    &::placeholder {
-        color: transparent;
-    }
-
-    &:placeholder-shown ~ .form__label {
-        font-size: 1.3rem;
-        cursor: text;
-        top: 20px;
-    }
+    transition: border-color 0.2s, padding-bottom 0.2s;
 }
 
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    top: 20px;
+    cursor: text;
+}
+
+/* Form Label */
 .form__label {
     position: absolute;
     top: 0;
-    display: block;
-    transition: 0.2s;
+    left: 0;
     font-size: 1rem;
-    color: #9b9b9b;
+    color: #3b474b;
+    transition: 0.2s ease;
 }
 
+/* Input Focus */
 .form__field:focus {
-    ~ .form__label {
-        position: absolute;
-        top: 0;
-        display: block;
-        transition: 0.2s;
-        font-size: 1rem;
-        color: #3b474b; /* Primary Color */
-        font-weight: 700;
-        border-bottom: 2px solid #3b474b;
-        outline: none;
-    }
-    padding-bottom: 6px;  
+    padding-bottom: 6px;
     font-weight: 700;
     border-width: 3px;
     border-image: linear-gradient(to right, #3b474b, #62777d);
     border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+    font-size: 1rem;
+    color: #3b474b;
+    font-weight: 700;
+}
+
+/* Reset input */
+.form__field:required,
+.form__field:invalid {
+    box-shadow: none;
 }
 
 /* Button Styling */
@@ -120,44 +124,11 @@ button {
     color: white;
     font-size: 18px;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
-#forgot:hover {
-    width: 100%;
-    padding: 12px;
-    background-color: transparent;
-    border: none;
-    border-radius: 10px;
-    color: #62777d;
-    font-size: 14px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-button:hover {
+button[type="submit"]:hover {
     background-color: #62777d;
-}
-
-/* Link Styling */
-p {
-    margin-top: 10px;
-}
-
-a {
-    color: #3b474b; /* Dark blue color for links */
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-a:hover {
-    color: #62777d; /* Lighter color on hover */
-    text-decoration: none;
-}
-
-/* Styling for the checkbox */
-input[type="checkbox"] {
-    accent-color: #3b474b;
 }
 
 /* Extra options (Remember Me & Forgot Password) */
@@ -165,17 +136,17 @@ input[type="checkbox"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 20px 0;
     width: 100%;
     padding: 0 10px;
 }
 
 /* Remember Me Checkbox */
 .extra-options label {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 8px;
-    white-space: nowrap; /* Prevent stacking */
+    white-space: nowrap;
 }
 
 /* Forgot Password Button */
@@ -183,7 +154,7 @@ input[type="checkbox"] {
     background: none;
     border: none;
     color: #3b474b;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
     padding: 0;
     text-decoration: none;
@@ -192,9 +163,27 @@ input[type="checkbox"] {
 .forgot-password:hover {
     color: #62777d;
     text-decoration: underline;
+    background-color: none;
 }
 
-/* Prevent box resizing */
-button, .forgot-password {
-    box-sizing: border-box;
+/* Link Styling */
+p {
+    margin-top: 10px;
+}
+
+a {
+    color: #3b474b;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+a:hover {
+    color: #62777d;
+    text-decoration: none;
+}
+
+/* Styling for the checkbox */
+input[type="checkbox"] {
+    accent-color: #3b474b;
 }
