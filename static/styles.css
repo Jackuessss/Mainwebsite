@@ -115,10 +115,13 @@ h2 {
     box-shadow: none;
 }
 
-.extra-padding {
+.extra-bottom-padding {
     padding-bottom: 20px; /* Adjust the value as needed */
 }
 
+.extra-top-padding {
+    padding-top: 20px; /* Adjust the value as needed */
+}
 /* Button Styling */
 button {
     width: 100%;
