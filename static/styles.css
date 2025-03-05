@@ -7,7 +7,7 @@
 
 html, body {
     height: 100%;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Full-screen Background Image */
@@ -48,47 +48,69 @@ h2 {
     margin-bottom: 20px;
     font-size: 30px;
     color: #3b474b; /* Dark blue color for headings */
-    font-weight:bold ;
+    font-weight: bold;
 }
 
 /* Form Input Fields */
-input[type="text"], input[type="email"], input[type="password"] {
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 10px;
-    border: 1px solid rgba(#3b474b);
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #3b474b; /* Dark blue color for input text */
-    font-size: 16px;
 }
 
-input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
-    outline: none;
-    border: 1px solid #3b474b; /* Dark blue border on focus */
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+        color: transparent;
+    }
+
+    &:placeholder-shown ~ .form__label {
+        font-size: 1.3rem;
+        cursor: text;
+        top: 20px;
+    }
 }
 
-/* Additional Options (Remember Me, Forgot Password) */
-.extra-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
 }
 
-.forgot-password {
-    background: none;
-    border: none;
-    color: #3b474b; /* Dark blue color for forgot password text */
-    font-size: 15px;
-    cursor: pointer;
+.form__field:focus {
+    ~ .form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: #3b474b; /* Primary Color */
+        font-weight: 700;
+        border-bottom: 2px solid #3b474b;
+        outline: none;
+    }
+    padding-bottom: 6px;  
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #3b474b, #62777d);
+    border-image-slice: 1;
 }
 
-.forgot-password:hover {
-    color: #62777d; /* Lighter color on hover */
-}
-
-/* Submit Button */
+/* Button Styling */
 button {
     width: 100%;
     padding: 12px;
@@ -100,7 +122,7 @@ button {
     cursor: pointer;
 }
 
-#forgot:hover{
+#forgot:hover {
     width: 100%;
     padding: 12px;
     background-color: transparent;
@@ -116,9 +138,6 @@ button:hover {
     background-color: #62777d;
 }
 
-input[type="checkbox"]{
-    accent-color: #3b474b;
-}
 /* Link Styling */
 p {
     margin-top: 10px;
@@ -134,4 +153,48 @@ a {
 a:hover {
     color: #62777d; /* Lighter color on hover */
     text-decoration: none;
+}
+
+/* Styling for the checkbox */
+input[type="checkbox"] {
+    accent-color: #3b474b;
+}
+
+/* Extra options (Remember Me & Forgot Password) */
+.extra-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+/* Remember Me Checkbox */
+.extra-options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap; /* Prevent stacking */
+}
+
+/* Forgot Password Button */
+.forgot-password {
+    background: none;
+    border: none;
+    color: #3b474b;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: #62777d;
+    text-decoration: underline;
+}
+
+/* Prevent box resizing */
+button, .forgot-password {
+    box-sizing: border-box;
 }
