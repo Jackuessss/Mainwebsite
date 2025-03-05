@@ -119,6 +119,10 @@ def signup():
 def homepage():
     return render_template('homepage.html')
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
