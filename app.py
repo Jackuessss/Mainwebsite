@@ -94,7 +94,7 @@ def login_user(username_or_email, password):
 
 @app.route('/')
 def index():
-    return render_template('signup.html')
+    return render_template('homepage.html')
 
 
 @app.route('/signup', methods=['GET', 'POST'])

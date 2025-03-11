@@ -1,1 +1,23 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- New Banner (no conflicts with existing classes) -->
+    <div class="top-banner">
+        <div class="banner-logo">
+            <img src="/static/images/Penguinnobg.png" alt="Logo" class="banner-logo-img">
+        </div>
+        <div class="banner-buttons">
+            <button class="banner-btn">Home</button>
+            <button class="banner-btn">About</button>
+            <button class="banner-btn">Services</button>
+            <button class="banner-btn">Contact</button>
+        </div>
+    </div>
+</body>
+</html>
